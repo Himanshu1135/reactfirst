@@ -1,0 +1,71 @@
+// var React = require("react");
+// var ReactDom = require("react-dom");
+// Due to babel we can aslo write as bellow
+import React from "react";
+import ReactDom from "react-dom"
+var cur_date = new Date().toLocaleDateString()
+var cur_time = new Date().toLocaleTimeString()
+var acc = "Top";
+var no = 5;
+// ReactDom.render("show what","show where ","callback")
+ReactDom.render(
+//   [
+//   <h1>Hello Himanshu</h1>,                         //By Array 
+//   <h2>Say harshit to fuck off</h2>
+// ],
+<>
+  <h1>{acc} Movies Picks</h1>                           
+  <h2>{`${acc} ${no} pick`}</h2>                    
+  <ol>
+    <li>Games of Thorens</li>
+    <li>Friends</li>
+    <li>Breaking Bad</li>
+    <li>Dark</li>
+    <li>Big Bang Theory</li>
+  </ol>
+  <h1>Today is {cur_date} and current time is {cur_time}</h1>
+</>,
+  document.getElementById("root"));
+
+// // without JSX below
+// var hk  = document.createElement("h1");
+// hk.innerHTML = "Hello Komal";
+// document.getElementById("root").appendChild(hk);
+
+------------------------------------------------------    Image
+ReactDOM.render(
+<>
+<h1 className ="header">Welcome to Gallary </h1>
+<div className="img">
+  <a href={link} target="hk">
+  <img src={img} alt="Pixel"/>
+  </a>
+</div>
+
+
+</>  
+,
+document.getElementById("root"))
+----------------------------------------------- Greet
+
+const csstyle = {}
+var time = new Date(2023 , 5 ,5 ,1).getHours()
+var greet = ''
+if(time > 7 && time < 11){
+  greet = "Good Morning"; 
+  csstyle.color = "green";
+}else if (time > 11 && time < 19) {
+  greet = "Good Afternoon";
+  csstyle.color = "orange";
+} else {
+  greet = "Good night";
+  csstyle.color = "black";
+};
+
+ReactDOM.render(
+  <>
+    <h1>Hello Sir, <span style={csstyle}>{greet}</span></h1>
+    <h2>{time}</h2>
+  </>,
+  document.getElementById("root")
+)
